@@ -1,10 +1,11 @@
 import requests
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timezone
 import os
 
-# Define where to save the data
-DATA_DIR = "../data"
+# ✅ Define base directory (always points to the project root)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 def fetch_crypto_data():
@@ -30,11 +31,11 @@ def fetch_crypto_data():
         # Keep only useful columns
         df = df[["id", "symbol", "current_price", "market_cap", "total_volume"]]
 
-        # Add a timestamp for reference
-        df["fetched_at"] = datetime.utcnow()
+        # Add a timezone-aware timestamp (fixes the DeprecationWarning)
+        df["fetched_at"] = datetime.now(timezone.utc)
 
-        # Define file path
-        file_path = os.path.join(DATA_DIR, f"crypto_data_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.csv")
+        # ✅ Define file path inside your /data folder
+        file_path = os.path.join(DATA_DIR, f"crypto_data_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}.csv")
 
         # Save to CSV
         df.to_csv(file_path, index=False)

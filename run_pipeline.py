@@ -1,15 +1,22 @@
 import os
-import datetime
 import subprocess
+from datetime import datetime
 
-LOG_FILE = "pipeline_log.txt"
+# --- Create logs folder if it doesn't exist ---
+LOG_DIR = "logs"
+os.makedirs(LOG_DIR, exist_ok=True)
+
+# --- Unique log file per run ---
+LOG_FILE = os.path.join(LOG_DIR, f"pipeline_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt")
+
 
 def log_message(message):
     """Helper to write messages to the log file"""
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open(LOG_FILE, "a", encoding="utf-8") as log:
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log.write(f"[{timestamp}] {message}\n")
     print(message)
+
 
 # --- Run the full pipeline ---
 steps = [
