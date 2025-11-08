@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 🚀 Cryptocurrency Data Pipeline Project
 
 ### 📊 Automated ETL + Visualization with Python & PostgreSQL
@@ -100,3 +101,6 @@ python run_pipeline.py
 # crypto-pipeline
 End-to-end cryptocurrency ETL pipeline using Python, PostgreSQL, and Matplotlib.
 >>>>>>> 4b4db45e45a459692f0566066098f1027ee201f7
+=======
+
+>>>>>>> 2fad09fb3d2601c63bcf621d93b98b280e0f5330
