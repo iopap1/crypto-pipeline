@@ -17,7 +17,7 @@ def fetch_crypto_data():
     params = {
         "vs_currency": "usd",
         "order": "market_cap_desc",
-        "per_page": 10,  # fetch top 10 coins
+        "per_page": 50,  # fetch top 50 coins
         "page": 1,
         "sparkline": False
     }

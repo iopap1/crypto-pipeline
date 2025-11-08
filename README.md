@@ -21,6 +21,18 @@ This project showcases:
 
 ---
 
+## 📊 Dashboard Preview
+
+Here’s a look at the interactive Streamlit dashboard included in this project.
+
+**Dashboard Snapshot**
+![Crypto Dashboard Table](assets/crypto_dashboard_table.png)
+
+**Market Cap Visualization**
+![Crypto Dashboard Chart](assets/crypto_dashboard_chart.png)
+
+---
+
 ## ⚙️ Tech Stack
 
 | Component | Technology |
@@ -41,6 +53,8 @@ crypto-pipeline/
 │ ├── transform.py # Cleans and prepares data
 │ ├── load.py # Loads data into PostgreSQL
 │
+├── app/
+│   └── dashboard.py          # Streamlit dashboard
 ├── data/ # Stores raw data files (CSV)
 ├── db/ # Stores cleaned data
 ├── outputs/ # Stores generated charts
@@ -49,7 +63,6 @@ crypto-pipeline/
 ├── run_pipeline.py # Automates full ETL process
 ├── pipeline_log.txt # Log of each run
 └── README.md # Project documentation
-
 
 ---
 
@@ -94,4 +107,30 @@ python run_pipeline.py
 - Clean CSV: db/clean_crypto_data.csv
 - Visualization: outputs/crypto_marketcap_<timestamp>.png
 - Database Table: crypto_prices in PostgreSQL
+
+
+6. **Run the Dashboard (Streamlit)**
+
+The Streamlit dashboard lets you explore the latest cryptocurrency data interactively.  
+It reads the most recent CSV saved in the `data/` folder (created by the ETL pipeline).
+
+### 1. Install requirements (only once)
+```bash
+pip install -r requirements.txt
+
+### 2. Run the Streamlit app
+cd app
+streamlit run dashboard.py
+
+Then open your browser at:
+http://localhost:8501
+
+You can:
+
+- Adjust the number of coins displayed with the “Top N by market cap” slider
+
+- View key metrics (price, market cap, trading volume) for each coin
+
+- Explore live data fetched from the CoinGecko API
+
 

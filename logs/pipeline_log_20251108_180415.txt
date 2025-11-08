@@ -1,0 +1,16 @@
+[2025-11-08 18:04:15] Starting full ETL pipeline...
+
+[2025-11-08 18:04:15] Running etl/fetch.py...
+[2025-11-08 18:04:16] etl/fetch.py completed successfully.
+
+[2025-11-08 18:04:16] Running etl/transform.py...
+[2025-11-08 18:04:17] etl/transform.py completed successfully.
+
+[2025-11-08 18:04:17] Running etl/load.py...
+[2025-11-08 18:04:17] etl/load.py completed successfully.
+
+[2025-11-08 18:04:17] Running visualize.py...
+[2025-11-08 18:04:18] visualize.py completed successfully.
+
+[2025-11-08 18:04:18] Pipeline completed successfully.
+
