@@ -72,9 +72,9 @@ crypto-pipeline/
 ## 🖥️ Run the Project Locally
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/<your-username>/crypto-pipeline.git
-   cd crypto-pipeline
+git clone https://github.com/iopap1/crypto-pipeline.git
+cd crypto-pipeline
+
 
 2. **Create a virtual environment**
 python -m venv venv
@@ -95,10 +95,3 @@ python run_pipeline.py
 - Visualization: outputs/crypto_marketcap_<timestamp>.png
 - Database Table: crypto_prices in PostgreSQL
 
-=======
-# crypto-pipeline
-End-to-end cryptocurrency ETL pipeline using Python, PostgreSQL, and Matplotlib.
->>>>>>> 4b4db45e45a459692f0566066098f1027ee201f7
-=======
-
->>>>>>> 2fad09fb3d2601c63bcf621d93b98b280e0f5330
